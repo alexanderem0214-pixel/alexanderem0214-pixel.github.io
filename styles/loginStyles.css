@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #0f0f0f;
+  color: #e5e5e5;
+}
+
+/* CONTENEDOR */
+.App {
+  min-height: 100vh;
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+.header-top {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  padding: 1.5rem 0;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  background: #d4af37;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #d4af37;
+}
+
+/* ================= NAV ================= */
+.header-nav {
+  background: #111;
+  border-bottom: 1px solid #222;
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-link {
+  padding: 1rem 2rem;
+  color: #aaa;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #d4af37;
+}
+
+.nav-link.active {
+  color: #d4af37;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 3px;
+  background: #d4af37;
+}
+
+/* ================= LOGIN ================= */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 2rem;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+}
+
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  animation: fadeIn 0.6s ease;
+}
+
+.login-card {
+  background: #111;
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid #222;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* HEADER LOGIN */
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h2 {
+  color: white;
+  font-size: 2rem;
+}
+
+.hero-highlight {
+  color: #d4af37;
+}
+
+.login-header p {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* FORM */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px solid #222;
+  background: #0f0f0f;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* BOTÓN */
+.btn-login {
+  background: #d4af37;
+  color: black;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background: #b8962e;
+  transform: translateY(-2px);
+}
+
+/* FOOTER LOGIN */
+.login-footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #888;
+}
+
+.login-footer a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #000;
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+  margin-top: auto;
+}
+
+/* ================= ANIMACIONES ================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
