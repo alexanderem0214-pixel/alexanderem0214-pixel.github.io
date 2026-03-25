@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Sobre Nosotros | Royal Barber</title>
+      <link rel="stylesheet" href="./styles/aboutStyles.css">
+   </head>
+   <body class="App">
+      <div class="layout-container">
+         <header class="header-top">
+            <div class="header-content">
+               <div class="logo-section">
+                  <div class="logo-icon">
+                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                        <path d="M12 5v14M5 12h14"/>
+                     </svg>
+                  </div>
+                  <span class="brand-name">Royal Barber</span>
+               </div>
+            </div>
+         </header>
+
+         <nav class="header-nav">
+            <div class="nav-content">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="servicios.html" class="nav-link">Servicios</a>
+                <a href="nosotros.html" class="nav-link active">Sobre Nosotros</a>
+                <a href="acceso.html" class="nav-link">Acceso</a>
+            </div>
+        </nav>
+
+         <main class="main-content">
+            <section class="about-page">
+               <div class="page-header">
+                  <h1 class="page-title">Nuestro <span class="hero-highlight">Equipo</span></h1>
+                  <p class="page-subtitle">Barberos profesionales comprometidos con tu estilo.</p>
+               </div>
+
+               <div class="team-section">
+                  <div class="team-grid" id="contenedor-equipo">
+
+                     <script type="module">
+                        import { muestraError } from './js/lib/muestraError.js';
+                        
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const contenedor = document.getElementById('contenedor-equipo');
+                            if (!contenedor) return;
+                        
+                            fetch('php/db.php')
+                                .then(response => {
+                                    if (!response.ok) throw new Error("Fallo en la BD");
+                                    return response.json();
+                                })
+                                .then(data => {
+                                    contenedor.innerHTML = '';
+                                    data.forEach(miembro => {
+                                        const card = `
+                                            <article class="team-member">
+                                                <div class="member-avatar">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                                                    </svg>
+                                                </div>
+                                                <h3>${miembro.nombre}</h3>
+                                                <div class="member-role">${miembro.especialidad}</div>
+                                                <p>${miembro.descripcion}</p>
+                                            </article>
+                                        `;
+                                        contenedor.insertAdjacentHTML('beforeend', card);
+                                    });
+                                })
+                                .catch(error => muestraError(error));
+                        });
+                     </script>
+
+                  </div>
+               </div>
+
+               <div class="stats-section">
+                  <div class="stats-grid">
+                     <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Años de experiencia</div>
+                     </div>
+                     <div class="stat-item">
+                        <div class="stat-number">3k+</div>
+                        <div class="stat-label">Clientes satisfechos</div>
+                     </div>
+                     <div class="stat-item">
+                        <div class="stat-number">6 días</div>
+                        <div class="stat-label">Atención semanal</div>
+                     </div>
+                  </div>
+               </div>
+
+            </section>
+
+            <section class="multimedia-section">
+               <div class="multimedia-column">
+
+                  <div class="multimedia-item">
+                     <h3 class="section-subtitle">Estilos de <span class="hero-highlight">Corte</span></h3>
+                     <div class="video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=ZQqombONos4" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                     </div>
+                  </div>
+
+                  <div class="multimedia-item">
+                     <h3 class="section-subtitle">Nuestra <span class="hero-highlight">Ubicación</span></h3>
+                     <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps?q=barberia+cdmx&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                     </div>
+                  </div>
+
+               </div>
+            </section>
+
+         </main>
+
+         <footer class="footer">
+            <div class="footer-content">
+
+               <div class="footer-section">
+                  <div class="logo-section footer-logo">
+                     <div class="logo-icon small"> 
+                        <img style="border-radius: 10px;" width="45px" src="./img/logobarber.jpeg"></img>    
+                     </div>
+                     <span class="brand-name">Royal Barber</span>
+                  </div>
+                  <p class="footer-description">Especialistas en estilo masculino. Tu imagen, nuestra prioridad.</p>
+               </div>
+
+               <div class="footer-section">
+                  <h4>Navegación</h4>
+                  <ul class="footer-links">
+                     <li><a href="#">Inicio</a></li>
+                     <li><a href="#">Servicios</a></li>
+                     <li><a href="#">Equipo</a></li>
+                     <li><a href="#">Citas</a></li>
+                  </ul>
+               </div>
+
+               <div class="footer-section">
+                  <h4>Contacto</h4>
+                  <p> Av. Principal #123, México</p>
+                  <p> +52 55 1234 5678</p>
+                  <p> contacto@barber.com</p>
+               </div>
+
+            </div>
+
+            <div class="footer-bottom">
+               <p>&copy; 2026 Royal Barber - Sistema Profesional de Barbería</p>
+            </div>
+         </footer>
+
+      </div>
+   </body>
+</html>

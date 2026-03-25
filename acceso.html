@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Black Crown Barber</title>
+      <link rel="stylesheet" href="./styles/loginStyles.css">
+   </head>
+   <body class="App">
+      <div class="layout-container">
+
+         <header class="header-top">
+            <div class="header-content">
+               <div class="logo-section">
+                  <div class="logo-icon">
+                     <img style="border-radius: 10px;" width="45px" src="./img/logobarber.jpeg" alt="Logo">
+                  </div>
+                  <span class="brand-name">Black Crown Barber</span>
+               </div>
+            </div>
+         </header>
+
+         <nav class="header-nav">
+            <div class="nav-content">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="servicios.html" class="nav-link">Servicios</a>
+                <a href="nosotros.html" class="nav-link">Sobre Nosotros</a>
+                <a href="acceso.html" class="nav-link active">Acceso</a>
+            </div>
+        </nav>   
+
+        <main class="main-content flex-center">
+            <div class="login-container">
+
+               <div class="login-card">
+                  <div class="login-header">
+                     <h2>Panel de <span class="hero-highlight">Barberos</span></h2>
+                     <p>Ingresa tus credenciales para acceder al sistema.</p>
+                  </div>
+
+                  <form id="login-form" class="login-form" novalidate>
+                     
+                     <div class="form-group">
+                        <label for="usuario">Usuario</label>
+                        <div class="input-wrapper">
+                           <input type="text" id="usuario" name="usuario" placeholder="Ej. barber_master">
+                        </div>
+                     </div>
+
+                     <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <div class="input-wrapper">
+                           <input type="password" id="password" name="password" placeholder="••••••••">
+                        </div>
+                     </div>
+
+                     <button type="submit" class="btn-login">Iniciar Sesión</button>
+
+                  </form>
+
+                  <div class="login-footer">
+                     <p>¿Nuevo en la barbería? <a href="registro.html">Regístrate aquí</a></p>
+                  </div>
+
+               </div>
+
+            </div>
+         </main>
+
+         <script type="module" src="js/lib/validaLogin.js"></script>
+
+      </div>
+
+      <script type="module" src="js/lib/recibeJson.js"></script>
+   </body>
+</html>

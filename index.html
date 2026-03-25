@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Royal Barber| Sistema Profesional</title>
+      <link rel="stylesheet" href="./styles/styles.css">
+   </head>
+   <body class="App">
+      <div class="layout-container">
+
+         <header class="header-top">
+            <div class="header-content">
+               <div class="logo-section">
+                  <div class="logo-icon">
+                     <img style="border-radius: 10px;" width="45px" src="./img/logobarber.jpeg"></img>    
+                  </div>
+                  <span class="brand-name">Royal Barber</span>
+               </div>
+            </div>
+         </header>
+
+         <nav class="header-nav">
+            <div class="nav-content">
+               <a href="#" class="nav-link active">Inicio</a>
+               <a href="./servicios.html" class="nav-link">Servicios</a>
+               <a href="./nosotros.html" class="nav-link">Sobre Nosotros</a>
+               <a href="./acceso.html" class="nav-link">Acceso</a>
+            </div>
+         </nav>
+
+         <main class="main-content">
+            <section class="home-page">
+
+               <div class="hero-section">
+                  <div class="hero-content">
+
+                     <div class="hero-text">
+                        <h1 class="hero-title">Estilo <span class="hero-highlight">Profesional</span> Para Tu Imagen</h1>
+                        <p class="hero-description">Ofrecemos cortes modernos, clásicos y servicios premium para que siempre luzcas impecable.</p>
+
+                        <h2 style="margin-bottom: 10px;" id="saludo-bienvenida">Bienvenido a <span class="hero-highlight">Royal Barber</span></h2>
+
+                        <script>
+                           const nombreGuardado = sessionStorage.getItem('usuarioActivo');
+                           const h2 = document.getElementById('saludo-bienvenida');
+                           
+                           if (nombreGuardado && h2) {
+                               h2.innerHTML = `¡Hola de nuevo, <span class="hero-highlight">${nombreGuardado}</span>!`;
+                           }
+                        </script>
+
+                        <div class="hero-buttons">
+                           <button class="btn-primary">Ver Servicios</button>
+                           <button class="btn-secondary">Agendar Cita</button>
+                        </div>
+                     </div>
+
+                     <div class="hero-image">
+                        <div class="pet-animation">
+                           <div style="width: 350px; height: 350px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+                              <img width="350px" src="./img/bannerimg.jpeg"></img>
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+
+               <div class="features-section">
+                  <div class="features-grid">
+
+                     <div class="feature-card">
+                        <div class="feature-icon">
+                           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                              <circle cx="12" cy="12" r="10"/>
+                              <path d="M12 6v6l4 2"/>
+                           </svg>
+                        </div>
+                        <h3>Horario Flexible</h3>
+                        <p>Atendemos con horarios amplios para adaptarnos a tu tiempo.</p>
+                     </div>
+
+                     <div class="feature-card">
+                        <div class="feature-icon">
+                           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                              <circle cx="12" cy="7" r="4"/>
+                           </svg>
+                        </div>
+                        <h3>Barberos Expertos</h3>
+                        <p>Profesionales con experiencia en estilos modernos y clásicos.</p>
+                     </div>
+
+                     <div class="feature-card">
+                        <div class="feature-icon">
+                           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                              <rect x="3" y="3" width="18" height="18" rx="2"/>
+                              <path d="M8 12h8"/>
+                           </svg>
+                        </div>
+                        <h3>Ambiente Premium</h3>
+                        <p>Un espacio cómodo y moderno para una experiencia única.</p>
+                     </div>
+
+                  </div>
+               </div>
+
+            </section>
+         </main>
+
+         <footer class="footer">
+            <div class="footer-content">
+
+               <div class="footer-section">
+                  <div class="logo-section footer-logo">
+                     <div class="logo-icon small"> 
+                        <img style="border-radius: 10px;" width="45px" src="./img/logoBarber.png"></img>    
+                     </div>
+                     <span class="brand-name">Royal Barber</span>
+                  </div>
+                  <p class="footer-description">Especialistas en estilo masculino. Tu imagen, nuestra prioridad.</p>
+               </div>
+
+               <div class="footer-section">
+                  <h4>Navegación</h4>
+                  <ul class="footer-links">
+                     <li><a href="#">Inicio</a></li>
+                     <li><a href="#">Servicios</a></li>
+                     <li><a href="#">Equipo</a></li>
+                     <li><a href="#">Citas</a></li>
+                  </ul>
+               </div>
+
+               <div class="footer-section">
+                  <h4>Contacto</h4>
+                  <p>📍 Av. Principal #123, México</p>
+                  <p>📞 +52 55 1234 5678</p>
+                  <p>✉️ contacto@barberstyle.com</p>
+               </div>
+
+            </div>
+
+            <div class="footer-bottom">
+               <p>&copy; 2026 BarberStyle - Sistema Profesional de Barbería</p>
+            </div>
+         </footer>
+
+      </div>
+   </body>
+</html>
